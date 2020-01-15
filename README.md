@@ -24,7 +24,15 @@ Finish time: __
 Actual time needed to complete: __oh... 1.5 hours___
 
 
+Number and name of feature: ___Feature 3: CSS Styling___
 
+Estimate of time needed to complete: _800 years or 45 minutes_
+
+Start time: __6:42___
+
+Finish time: _____
+
+Actual time needed to complete: _____
 
 
 Resources:

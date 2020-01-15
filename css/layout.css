@@ -1,0 +1,32 @@
+body {
+  width: 95%;
+  margin: auto;
+}
+
+main {
+  width: 95%;
+  margin: auto;
+}
+
+img {
+  max-width: 300px;
+}
+
+h2 {
+  font-size: 35px;
+}
+p {
+  font-size: 24px;
+}
+
+section {
+  max-width: 325px;
+  margin: auto;
+  width: 100%;
+  float: left;
+  
+}
+
+h1 {
+  font-size: 75px;
+}
