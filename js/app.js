@@ -1,4 +1,5 @@
 'use strict'
+
 //Use AJAX, specifically $.get(), to read the provided JSON file.
 // Each object should become a new instance of a constructor function. Refer to the data to determine the necessary properties.
 function Horns(hornsF){
@@ -10,21 +11,18 @@ function Horns(hornsF){
 }
 
 Horns.allHorns = [];
+let keywords =[];
 
-Horns.prototype.dropDown = {
-  //const  
-
-}
 
 Horns.prototype.render = function() {
   $('main').append('<div class="photo"></div>');
   let hornsPhoto = $('div[class="photo"]');
-
+  
   let hornsHtml = $('#photo-template').html();
-
+  
   hornsPhoto.html(hornsHtml);
   console.log(hornsPhoto.html);
-
+  
   hornsPhoto.find('h2').text(this.title);
   hornsPhoto.find('img').attr('src', this.image_url);
   hornsPhoto.find('p').text(this.descriptions);
@@ -34,13 +32,26 @@ Horns.prototype.render = function() {
 
 Horns.readJson = () => {
   $.get('data/page-1.json')
-    .then(data => {
-      data.forEach(item => {
-        Horns.allHorns.push(new Horns(item));
-      });
-    })
-    .then(Horns.loadHorns);
+  .then(data => {
+    data.forEach(item => {
+      Horns.allHorns.push(new Horns(item));
+      if (!keywords.includes(item.keyword)){
+        console.log('pushing to keyword array')
+        keywords.push(item.keyword);
+      };
+    });
+  })
+  .then(Horns.loadHorns);
+  .then(Horns.dropDown);
 };
+
+Horns.prototype.dropDown = {
+  keywords.forEach(key => {
+    let `$selector` = $(`<option class="${key}">${key}</option>`);
+    $('select').append($option);
+  }),
+};
+
 
 Horns.loadHorns = () => {
   Horns.allHorns.forEach(horns => horns.render());
