@@ -1,0 +1,31 @@
+body {
+  width: 95%;
+  margin: auto;
+}
+
+main {
+  width: 95%;
+  margin: auto;
+}
+
+/* img {
+  max-width: 300px;
+} */
+
+h2 {
+  font-size: 35px;
+}
+p {
+  font-size: 24px;
+}
+
+div {
+  max-width: 200px;
+  margin: auto;
+  float: left;
+
+}
+
+h1 {
+  font-size: 75px;
+}
